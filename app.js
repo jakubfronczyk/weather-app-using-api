@@ -19,6 +19,8 @@ let weather = {
         document.querySelector(".temp").innerText = temp + "°C";
         document.querySelector(".humidity").innerText ="Humidity: " + humidity +"%";
         document.querySelector(".wind").innerText ="Wind speed: " + speed + " km/h";
+        document.querySelector(".weather").classList.remove("loading");
+        document.body.style.backgroundImage = "url('images/"+ name +".jpg')"
     },
     search: function () {
         this.fetchWeather(document.querySelector(".search-bar").value)
@@ -34,3 +36,12 @@ document.querySelector(".search-bar").addEventListener("keyup", (event) => {
         weather.search();
     }
 })
+
+function backgroundImage(){
+
+    const choice = city
+
+    if (choice === "denver"){
+        document.body.style.backgroundImage = "url('images/denver.jpg')";
+    }
+}
